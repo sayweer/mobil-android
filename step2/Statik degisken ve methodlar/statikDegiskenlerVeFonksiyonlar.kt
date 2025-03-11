@@ -6,6 +6,11 @@ fun hizmetYazdir()
 {
     println("verilen hizmet = $hizmet")
 }
+
+fun hizmetDegistir(hizmet:String)
+{
+    this.hizmet = hizmet
+}
 fun main()
 {
     println(StatikDegiskenVeMethodlar.isim)
@@ -18,4 +23,8 @@ fun main()
     StatikDegiskenVeMethodlar.yazdir()
 
     hizmetYazdir() //burada da top-level fonksiyonu kullandik.
+
+    hizmetDegistir("giderToplami")
+
+    hizmetYazdir()
 }
