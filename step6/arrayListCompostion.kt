@@ -2,8 +2,20 @@ package com.calisma.step6
 
 fun main()
 {
+    var personelSayisi : Int? =null
+    while (true)
+    {
+        println("kac personel eklenecegini giriniz = ")
+        personelSayisi = readLine()?.toIntOrNull()
+        if(personelSayisi != null)
+            break
+        else
+            println("gecersiz bir deger girdiniz kontrol edip tekrar deneyiniz.")
+    }
+
+
     val personeller = ArrayList<Personel>()
-    for (i in 0..4)
+    for (i in 0 until personelSayisi)
     {
         println("lufen personelin adini giriniz = ")
         val isim = readLine() ?:""
@@ -63,9 +75,8 @@ fun main()
         personeller.add(Personel(isim ,soyAd , yas ,maas ,adres))
     }
     
-    for(i in 0..4)
+    for(i in 0 until personelSayisi)
     {
-        println("${i+1}. personelin ismi = ${personeller[i].isim}")
-        println("${i+1}. personelin soyismi = ${personeller[i].soyAd}\n")
+        println("${i+1}. personel = ${personeller[i]}\n")
     }
 }
