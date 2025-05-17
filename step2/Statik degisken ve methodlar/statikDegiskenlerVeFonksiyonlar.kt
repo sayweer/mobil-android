@@ -1,15 +1,15 @@
 package com.calisma.step2
 
-val hizmet = "gelirBeyani" //burada da top-level tanimlamalar yaptik. herhangi bir sinifa bagli degiller statik ozellik gosteriyorlar ve global degisken ya da fonksiyonlar.
-
+var hizmet = "gelirBeyani" //burada da top-level tanimlamalar yaptik. herhangi bir sinifa bagli degiller statik ozellik gosteriyorlar ve global degisken ya da fonksiyonlar.
+//val degisken var ile degistirildi
 fun hizmetYazdir()
 {
     println("verilen hizmet = $hizmet")
 }
 
-fun hizmetDegistir(hizmet:String)
+fun hizmetDegistir(yeniHizmet:String)
 {
-    this.hizmet = hizmet
+    hizmet = yeniHizmet  //this kullanım hatasi duzeltildi. This siniflar icerisinde bir nesneye referans olarak kullanılır. burada hizmet degiskeni ve hizmetDegistir fonksiyonu bir sinifa bagli degil ve top-level degiskenlerler.
 }
 fun main()
 {
